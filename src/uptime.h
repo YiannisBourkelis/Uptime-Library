@@ -44,13 +44,13 @@ class uptime
   public:
     uptime();
 
-    static void          calculate_uptime();
+    static void          calculateUptime();
 
-    static unsigned long get_milliseconds();
-    static unsigned long get_seconds();
-    static unsigned long get_minutes();
-    static unsigned long get_hours();
-    static unsigned long get_days();
+    static unsigned long getMilliseconds();
+    static unsigned long getSeconds();
+    static unsigned long getMinutes();
+    static unsigned long getHours();
+    static unsigned long getDays();
       
   private:
     static unsigned long m_milliseconds;

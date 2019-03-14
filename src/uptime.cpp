@@ -68,23 +68,23 @@ uptime::uptime()
 }
 
 /**** get the actual time passed from device boot time ****/
-unsigned long uptime::get_milliseconds()
+unsigned long uptime::getMilliseconds()
 {
   return uptime::m_mod_milliseconds;
 }
-unsigned long uptime::get_seconds()
+unsigned long uptime::getSeconds()
 {
   return uptime::m_mod_seconds;
 }
-unsigned long uptime::get_minutes()
+unsigned long uptime::getMinutes()
 {
   return uptime::m_mod_minutes;
 }
-unsigned long uptime::get_hours()
+unsigned long uptime::getHours()
 {
   return uptime::m_mod_hours;
 }
-unsigned long uptime::get_days()
+unsigned long uptime::getDays()
 {
   return uptime::m_days;
 }
@@ -92,7 +92,7 @@ unsigned long uptime::get_days()
 
 //calculate milliseconds, seconds, hours and days
 //and store them in their static variables
-void uptime::calculate_uptime()
+void uptime::calculateUptime()
 {
   uptime::m_milliseconds = millis();
   

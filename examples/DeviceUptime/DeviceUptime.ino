@@ -27,8 +27,8 @@ void setup() {
 
 void loop() {
   //uptime_formatter::get_uptime() returns a string 
-  //containing the total device uptime since boot in days, hours, minutes and seconds
-  Serial.println("up " + uptime_formatter::get_uptime());
+  //containing the total device uptime since startup in days, hours, minutes and seconds
+  Serial.println("up " + uptime_formatter::getUptime());
 
   //wait 1 second
   delay(1000);

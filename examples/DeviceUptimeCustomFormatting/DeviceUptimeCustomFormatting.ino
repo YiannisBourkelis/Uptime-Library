@@ -32,24 +32,25 @@ void loop() {
   
   //First call calculate_uptime() to calculate the uptime
   //and then read the uptime variables.
-  uptime::calculate_uptime();
+  uptime::calculateUptime();
   
   Serial.print("days: ");
-  Serial.println(uptime::get_days());
+  Serial.println(uptime::getDays());
   
   Serial.print("hours: ");
-  Serial.println(uptime::get_hours());
+  Serial.println(uptime::getHours());
   
   Serial.print("minutes: ");
-  Serial.println(uptime::get_minutes());
+  Serial.println(uptime::getMinutes());
   
   Serial.print("seconds: ");
-  Serial.println(uptime::get_seconds());
+  Serial.println(uptime::getSeconds());
   
   Serial.print("milliseconds: ");
-  Serial.println(uptime::get_milliseconds());
+  Serial.println(uptime::getMilliseconds());
 
   Serial.print("\n");
+  
   //wait 1 second
   delay(1000);
 }

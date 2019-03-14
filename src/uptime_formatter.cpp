@@ -27,20 +27,20 @@ uptime_formatter::uptime_formatter()
 
 //returns the actual time passed since device boot
 //in the format: x days, y hours, z minutes, s seconds
-String uptime_formatter::get_uptime()
+String uptime_formatter::getUptime()
 {
-  uptime::calculate_uptime();
+  uptime::calculateUptime();
   
-  return  (String)(uptime::get_days()   ) + " days, "    +
-          (String)(uptime::get_hours()  ) + " hours, "   +
-          (String)(uptime::get_minutes()) + " minutes, " +
-          (String)(uptime::get_seconds()) + " seconds";
+  return  (String)(uptime::getDays()   ) + " days, "    +
+          (String)(uptime::getHours()  ) + " hours, "   +
+          (String)(uptime::getMinutes()) + " minutes, " +
+          (String)(uptime::getSeconds()) + " seconds";
 }
 
 //returns the actual time passed since device boot
 //in the format: x days, y hours, z minutes, s seconds, n milliseconds
-String uptime_formatter::get_uptime_with_millis()
+String uptime_formatter::getUptimeWithMillis()
 {
- return  uptime_formatter::get_uptime()        + ", " +
-          (String)(uptime::get_milliseconds()) + " milliseconds";
+ return  uptime_formatter::getUptime()        + ", " +
+          (String)(uptime::getMilliseconds()) + " milliseconds";
 }

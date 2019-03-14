@@ -29,6 +29,6 @@ class uptime_formatter
   public:
     uptime_formatter();
     
-    static String get_uptime();
-    static String get_uptime_with_millis();
+    static String getUptime();
+    static String getUptimeWithMillis();
 };
