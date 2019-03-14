@@ -5,7 +5,6 @@ With the uptime library for Arduino boards and compatible systems you can read t
 # Usage
 
 #### Example 1: [Device Uptime](https://github.com/YiannisBourkelis/Uptime-Library/tree/master/examples/DeviceUptime "Device Uptime")
-
 ```cpp
 #include "uptime_formatter.h"
 
@@ -17,7 +16,7 @@ void setup() {
 void loop() {
   //uptime_formatter::get_uptime() returns a string 
   //containing the total device uptime since startup in days, hours, minutes and seconds
-  Serial.println("up " + uptime_formatter::get_uptime());
+  Serial.println("up " + uptime_formatter::getUptime());
 
   //wait 1 second
   delay(1000);
@@ -58,22 +57,22 @@ void loop() {
   
   //First call calculate_uptime() to calculate the uptime
   //and then read the uptime variables.
-  uptime::calculate_uptime();
+  uptime::calculateUptime();
   
   Serial.print("days: ");
-  Serial.println(uptime::get_days());
+  Serial.println(uptime::getDays());
   
   Serial.print("hours: ");
-  Serial.println(uptime::get_hours());
+  Serial.println(uptime::getHours());
   
   Serial.print("minutes: ");
-  Serial.println(uptime::get_minutes());
+  Serial.println(uptime::getMinutes());
   
   Serial.print("seconds: ");
-  Serial.println(uptime::get_seconds());
+  Serial.println(uptime::getSeconds());
   
   Serial.print("milliseconds: ");
-  Serial.println(uptime::get_milliseconds());
+  Serial.println(uptime::getMilliseconds());
 
   Serial.print("\n");
   
