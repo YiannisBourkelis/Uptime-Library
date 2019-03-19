@@ -22,12 +22,12 @@
  * Uptime library for Arduino boards and compatible systems
  *
  * Caclulates the time passed since the device boot time, even after the millis() overflow, after 49 days
- * 
+ *
  * Usage:
  * include "uptime_formatter.h"
- * Inside your loop() function: 
+ * Inside your loop() function:
  * Serial.println("Uptime: " + uptime_formatter::get_uptime());
- * 
+ *
  * Examples here:
  *
  * Created 08 May 2019
@@ -50,7 +50,7 @@ unsigned long uptime::m_days;
 //in case of millis() overflow, we store in these private variables
 //the existing time passed until the moment of the overflow
 //so that we can add them on the next call to compute the time passed
-unsigned long uptime::m_last_milliseconds = 0;   
+unsigned long uptime::m_last_milliseconds = 0;
 unsigned long uptime::m_remaining_seconds = 0;
 unsigned long uptime::m_remaining_minutes = 0;
 unsigned long uptime::m_remaining_hours = 0;
@@ -62,7 +62,7 @@ unsigned long uptime::m_mod_milliseconds;
 unsigned long uptime::m_mod_seconds;
 unsigned long uptime::m_mod_minutes;
 unsigned long uptime::m_mod_hours;
-    
+
 uptime::uptime()
 {
 }
@@ -95,8 +95,9 @@ unsigned long uptime::getDays()
 void uptime::calculateUptime()
 {
   uptime::m_milliseconds = millis();
-  
+
   if (uptime::m_last_milliseconds > uptime::m_milliseconds){
+    //TODO: use std::numeric_limits<unsigned long>::max() to calculate the exact remaining milliseconds after the overflow
     //in case of millis() overflow, store existing passed seconds,minutes,hours and days
     uptime::m_remaining_seconds = uptime::m_mod_seconds;
     uptime::m_remaining_minutes = uptime::m_mod_minutes;
@@ -116,7 +117,7 @@ void uptime::calculateUptime()
   uptime::m_days         = (uptime::m_hours        / 24)   + uptime::m_remaining_days;
 
   //calculate the actual time passed, using modulus, in milliseconds, seconds and hours.
-  //The days are calculated allready in the previous step. 
+  //The days are calculated allready in the previous step.
   uptime::m_mod_milliseconds = uptime::m_milliseconds % 1000;
   uptime::m_mod_seconds      = uptime::m_seconds      % 60;
   uptime::m_mod_minutes      = uptime::m_minutes      % 60;
